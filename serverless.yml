@@ -1,0 +1,22 @@
+# serverless.yml
+
+service: portfolio
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-east-1
+
+package:
+  exclude:
+    - .git/**
+    - .vscode/**
+    - venv/**
+
+functions:
+  app:
+    handler: index.handler
+    events:
+      - http: ANY /
+      - http: "ANY {proxy+}"

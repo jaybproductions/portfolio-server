@@ -1,5 +1,5 @@
 const express = require("express");
-
+const serverless = require("serverless-http");
 const app = express();
 const cors = require("cors");
 const http = require("http");
@@ -78,6 +78,4 @@ app.post("/add/blog", (req, res) => {
   document.doc(req.body.data.title).set(req.body);
 });
 
-app.listen(process.env.PORT, () => {
-  console.log("Server is listening!");
-});
+module.exports.handler = serverless(app);
