@@ -9,7 +9,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 //firebase stuff
 const admin = require("firebase-admin");
-const serviceAccount = require("./portfolio-f88db-firebase-adminsdk-lqvwd-d676854074.json");
+const serviceAccount = require("./portfolio-f88db-firebase-adminsdk-lqvwd-dc8ff0c5d5.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
